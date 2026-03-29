@@ -5,33 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    :root {
+      --bg: #0a0a0a;
+      --text: #ffffff;
+      --card: #111;
+    }
+
+    .light {
+      --bg: #ffffff;
+      --text: #000000;
+      --card: #f2f2f2;
+    }
+
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #0a0a0a;
-      color: white;
+      background: var(--bg);
+      color: var(--text);
+      transition: 0.3s;
     }
 
     nav {
       display: flex;
       justify-content: space-between;
       padding: 20px;
-      background: #0a0a0a;
       position: sticky;
       top: 0;
+      background: var(--bg);
     }
 
-    nav h2 {color: #00ffae;}
-
-    nav a {
-      color: white;
-      margin-left: 20px;
-      text-decoration: none;
+    nav button {
+      background: none;
+      border: 1px solid #00ffae;
+      color: #00ffae;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
     }
 
     .hero {
       text-align: center;
       padding: 100px 20px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: 1s;
+    }
+
+    .show {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .hero h1 {
@@ -55,6 +77,9 @@
     .section {
       padding: 60px 20px;
       text-align: center;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: 1s;
     }
 
     .cards {
@@ -64,18 +89,16 @@
     }
 
     .card {
-      background: #111;
+      background: var(--card);
       padding: 25px;
       margin: 10px;
       border-radius: 15px;
       width: 260px;
       transition: 0.3s;
-      border: 1px solid #222;
     }
 
     .card:hover {
       transform: translateY(-8px);
-      border-color: #00ffae;
     }
 
     .highlight {
@@ -91,7 +114,7 @@
 
     .output {
       margin-top: 20px;
-      background: #111;
+      background: var(--card);
       padding: 15px;
       border-radius: 8px;
       display: inline-block;
@@ -115,19 +138,15 @@
 
 <nav>
   <h2>ReplyScale</h2>
-  <div>
-    <a href="#">Services</a>
-    <a href="#">Pricing</a>
-    <a href="#">Contact</a>
-  </div>
+  <button onclick="toggleMode()">🌗</button>
 </nav>
 
 <div class="hero">
   <h1>Be Seen. Get Chosen.</h1>
-  <p>We turn your social media into a system that brings you clients, not just views.</p>
+  <p>We turn your social media into a system that brings you clients.</p>
 
   <a href="https://instagram.com/YOURUSERNAME" class="btn">Get Started</a>
-  <a href="https://wa.me/91XXXXXXXXXX" class="btn">Book Free Call</a>
+  <a href="https://calendly.com/YOUR-LINK" class="btn">Book Free Call</a>
 </div>
 
 <div class="section">
@@ -140,56 +159,41 @@
 </div>
 
 <div class="section">
-  <h2>Before vs After</h2>
+  <h2>Testimonials</h2>
   <div class="cards">
-    <div class="card">
-      <h3>Before</h3>
-      <p>No system, random posts, no clients</p>
-    </div>
-    <div class="card">
-      <h3>After</h3>
-      <p>Clear strategy, DMs flowing, consistent clients</p>
-    </div>
+    <div class="card">“Got my first 5 clients using their DM system!”</div>
+    <div class="card">“Simple but actually works. Highly recommend.”</div>
+    <div class="card">“Turned my page into a real business.”</div>
   </div>
 </div>
 
 <div class="section">
   <h2>Pricing</h2>
   <div class="cards">
-
     <div class="card">
       <h3>Starter</h3>
       <p>₹999/month</p>
-      <p>DM scripts + profile fix</p>
     </div>
 
     <div class="card highlight">
       <h3>Growth</h3>
       <p>₹2,499/month</p>
-      <p>Full DM system + content ideas</p>
     </div>
 
     <div class="card">
       <h3>Premium</h3>
       <p>₹4,999/month</p>
-      <p>Full setup + support</p>
     </div>
-
   </div>
 </div>
 
 <div class="section">
-  <h2>Try DM Generator 🔥</h2>
+  <h2>Try DM Generator</h2>
   <input id="niche" placeholder="Your niche">
   <input id="offer" placeholder="Your offer">
   <br>
   <button class="btn" onclick="generateDM()">Generate</button>
   <div id="result" class="output"></div>
-</div>
-
-<div class="section">
-  <h2>Contact</h2>
-  <p>DM us on Instagram or WhatsApp</p>
 </div>
 
 <a href="https://wa.me/91XXXXXXXXXX" class="sticky-btn">Chat Now</a>
@@ -198,11 +202,24 @@
 function generateDM() {
   let niche = document.getElementById("niche").value;
   let offer = document.getElementById("offer").value;
-
-  let message = `Hey! I saw your page — love your ${offer}. I help ${niche}s turn their social into a client system using simple DM strategies. Want a quick idea?`;
-
+  let message = `Hey! I saw your page — love your ${offer}. I help ${niche}s turn their social into clients using simple DM systems. Want a quick idea?`;
   document.getElementById("result").innerText = message;
 }
+
+function toggleMode() {
+  document.body.classList.toggle("light");
+}
+
+// scroll animation
+const sections = document.querySelectorAll(".section, .hero");
+window.addEventListener("scroll", () => {
+  sections.forEach(sec => {
+    let top = sec.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      sec.classList.add("show");
+    }
+  });
+});
 </script>
 
 </body>
