@@ -293,6 +293,46 @@
   </div>
 </div>
 <div class="section">
+
+  <div class="section">
+  <h2>FAQs & Objections</h2>
+  <p>Common concerns answered to make your decision easier:</p>
+
+  <div class="cards">
+
+    <div class="card" onclick="toggleFAQ(this)">
+      <h3>Do I need prior marketing experience?</h3>
+      <div class="hidden">
+        <p>No! ReplyScale is designed for beginners and pros alike. Our systems guide you step by step.</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleFAQ(this)">
+      <h3>How long before I see results?</h3>
+      <div class="hidden">
+        <p>Most users see replies and early leads within a week, but full conversion depends on your niche and engagement.</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleFAQ(this)">
+      <h3>Will this work for my business?</h3>
+      <div class="hidden">
+        <p>ReplyScale works for most service-based and creator businesses. If unsure, book a free call for personalized guidance.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function toggleFAQ(selected) {
+    let faqs = document.querySelectorAll(".card");
+    faqs.forEach(faq => {
+      if (faq !== selected) faq.classList.remove("active");
+    });
+    selected.classList.toggle("active");
+  }
+</script>
   <h2>Try DM Generator</h2>
 
   <input id="niche" placeholder="Your niche">
