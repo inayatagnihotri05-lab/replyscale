@@ -200,12 +200,36 @@
 </div>
 
 <div class="section">
-  <h2>The System</h2>
+  <h2>Why Most Businesses Don’t Convert</h2>
+  <p>
+    Getting attention is easy. Turning it into clients is where most businesses fail.
+  </p>
+
+  <div class="cards">
+    <div class="card">
+      <h3>90%+</h3>
+      <p>of viewers never take action</p>
+    </div>
+    <div class="card">
+      <h3>80%</h3>
+      <p>of leads drop due to poor follow-up</p>
+    </div>
+    <div class="card">
+      <h3>3–5%</h3>
+      <p>typical conversion without systems</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>The ReplyScale System</h2>
+
   <div class="flow">
-    <div>1. Content that attracts the right people</div>
-    <div>2. Messaging that starts conversations</div>
-    <div>3. DM systems that convert interest into clients</div>
-    <div>4. Simple flows that turn conversations into sales</div>
+    <div><strong>1. Attract the right audience</strong><br>Content designed to bring in buyers, not just views.</div>
+    <div><strong>2. Start conversations</strong><br>Messaging that makes people reply.</div>
+    <div><strong>3. Convert in DMs</strong><br>Structured flows that turn interest into clients.</div>
+    <div><strong>4. Build a system</strong><br>Everything connects into a smooth lead flow.</div>
+    <div><strong>5. Scale consistently</strong><br>No guesswork, just repeatable results.</div>
   </div>
 </div>
 
@@ -220,7 +244,7 @@
       <div class="hidden">
         <p>✔ Profile optimization</p>
         <p>✔ Basic DM scripts</p>
-        <p>✔ Simple conversion flow</p>
+        <p>✔ Conversion flow</p>
       </div>
     </div>
 
@@ -276,17 +300,12 @@ function generateDM() {
 
 function openCard(selected) {
   let cards = document.querySelectorAll(".card");
-
   cards.forEach(card => {
-    if (card !== selected) {
-      card.classList.remove("active");
-    }
+    if (card !== selected) card.classList.remove("active");
   });
-
   selected.classList.toggle("active");
 }
 
-// scroll animation
 const sections = document.querySelectorAll(".section");
 window.addEventListener("scroll", () => {
   sections.forEach(sec => {
