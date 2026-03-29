@@ -6,20 +6,11 @@
 
   <style>
     :root {
-      --bg: #0a0a0a;
+      --bg: #0b0f1a;
       --text: #ffffff;
-      --card: #111;
-      --accent: #00ffae;
-    }
-
-    body.light {
-      --bg: #ffffff;
-      --text: #000000;
-      --card: #f2f2f2;
-    }
-
-    html {
-      scroll-behavior: smooth;
+      --card: #111827;
+      --accent: #7c3aed;
+      --accent2: #22d3ee;
     }
 
     body {
@@ -27,7 +18,10 @@
       font-family: 'Segoe UI', sans-serif;
       background: var(--bg);
       color: var(--text);
-      transition: background 0.3s, color 0.3s;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     nav {
@@ -36,21 +30,14 @@
       padding: 20px;
       position: sticky;
       top: 0;
+      background: rgba(11,15,26,0.7);
       backdrop-filter: blur(10px);
-      background: rgba(0,0,0,0.6);
     }
 
     nav h2 {
-      color: var(--accent);
-    }
-
-    nav button {
-      background: none;
-      border: 1px solid var(--accent);
-      color: var(--accent);
-      padding: 6px 12px;
-      border-radius: 6px;
-      cursor: pointer;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      color: transparent;
     }
 
     .hero {
@@ -59,18 +46,26 @@
     }
 
     .hero h1 {
-      font-size: 52px;
-      background: linear-gradient(90deg, #00ffae, #00c3ff);
+      font-size: 56px;
+      line-height: 1.1;
+      background: linear-gradient(90deg, #7c3aed, #22d3ee);
       -webkit-background-clip: text;
       color: transparent;
     }
 
+    .hero p {
+      max-width: 600px;
+      margin: 20px auto;
+      color: #9ca3af;
+      font-size: 18px;
+    }
+
     .btn {
-      background: var(--accent);
-      color: black;
-      padding: 12px 24px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      color: white;
+      padding: 14px 26px;
       margin: 10px;
-      border-radius: 8px;
+      border-radius: 10px;
       text-decoration: none;
       font-weight: bold;
       display: inline-block;
@@ -82,16 +77,19 @@
     }
 
     .section {
-      padding: 80px 20px;
+      padding: 90px 20px;
       text-align: center;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.8s ease;
     }
 
-    .show {
-      opacity: 1;
-      transform: translateY(0);
+    .section h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .section p {
+      color: #9ca3af;
+      max-width: 600px;
+      margin: 0 auto 40px;
     }
 
     .cards {
@@ -102,39 +100,41 @@
 
     .card {
       background: var(--card);
-      padding: 25px;
-      margin: 10px;
-      border-radius: 15px;
+      padding: 30px;
+      margin: 12px;
+      border-radius: 16px;
       width: 260px;
       transition: 0.3s;
-      border: 1px solid #222;
+      border: 1px solid #1f2937;
     }
 
     .card:hover {
-      transform: translateY(-8px) scale(1.02);
+      transform: translateY(-10px);
       border-color: var(--accent);
     }
 
     .highlight {
       border: 2px solid var(--accent);
+      transform: scale(1.05);
     }
 
-    .stats {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 30px;
+    .flow {
+      max-width: 800px;
+      margin: auto;
+      text-align: left;
     }
 
-    .stat {
-      margin: 15px;
-      font-size: 20px;
+    .flow div {
+      margin: 20px 0;
+      padding: 20px;
+      background: var(--card);
+      border-radius: 12px;
     }
 
     input {
-      padding: 10px;
+      padding: 12px;
       margin: 10px;
-      border-radius: 6px;
+      border-radius: 8px;
       border: none;
     }
 
@@ -142,21 +142,22 @@
       margin-top: 20px;
       background: var(--card);
       padding: 15px;
-      border-radius: 8px;
+      border-radius: 10px;
       display: inline-block;
+      max-width: 500px;
     }
 
     .sticky-btn {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: var(--accent);
-      color: black;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      color: white;
       padding: 14px 20px;
       border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
-      box-shadow: 0 0 15px rgba(0,255,174,0.5);
+      box-shadow: 0 0 20px rgba(124,58,237,0.5);
     }
 
   </style>
@@ -166,106 +167,106 @@
 
 <nav>
   <h2>ReplyScale</h2>
-  <button onclick="toggleMode()">🌗</button>
 </nav>
 
 <div class="hero">
-  <h1>Be Seen. Get Chosen.</h1>
-  <p>We turn your social media into a system that brings you consistent clients.</p>
+  <h1>Turn Attention Into Clients</h1>
+  <p>
+    Most creators and small businesses get views, likes, and comments — but no real clients.
+    ReplyScale builds simple systems that turn your content and DMs into consistent leads, conversations, and sales.
+  </p>
 
   <a href="https://instagram.com/YOURUSERNAME" class="btn">Get Started</a>
   <a href="https://calendly.com/YOUR-LINK" class="btn">Book Free Call</a>
 </div>
 
 <div class="section">
-  <h2>What We Do</h2>
+  <h2>The Problem</h2>
+  <p>
+    You’re posting. People are watching. Some even reply.
+    But nothing turns into actual business.
+  </p>
+
   <div class="cards">
-    <div class="card">🚀 Content Strategy</div>
-    <div class="card">💬 DM Systems</div>
-    <div class="card">📈 Client Conversion</div>
+    <div class="card">Low replies on posts</div>
+    <div class="card">No clear DM strategy</div>
+    <div class="card">Leads that don’t convert</div>
   </div>
 </div>
 
 <div class="section">
-  <h2>Results</h2>
-  <div class="stats">
-    <div class="stat">⚡ 3x More Replies</div>
-    <div class="stat">📩 More DMs</div>
-    <div class="stat">💰 More Clients</div>
+  <h2>The System</h2>
+  <p>
+    We don’t just help you post more. We build a simple system that connects your content to actual revenue.
+  </p>
+
+  <div class="flow">
+    <div>1. Content that attracts the right audience</div>
+    <div>2. Clear messaging that starts conversations</div>
+    <div>3. DM system that converts interest into clients</div>
+    <div>4. Simple lead flow that turns conversations into sales</div>
   </div>
 </div>
 
 <div class="section">
-  <h2>Testimonials</h2>
+  <h2>What You Get</h2>
+  <p>
+    Everything you need to turn your social media into a working client acquisition system.
+  </p>
+
   <div class="cards">
-    <div class="card">“Got clients within a week.”</div>
-    <div class="card">“Simple but insanely effective.”</div>
-    <div class="card">“Actually converts, not just looks good.”</div>
+    <div class="card">Content Strategy</div>
+    <div class="card">DM Scripts & Flows</div>
+    <div class="card">Lead Conversion Setup</div>
   </div>
 </div>
 
 <div class="section">
   <h2>Pricing</h2>
+
   <div class="cards">
+
     <div class="card">
       <h3>Starter</h3>
       <p>₹999</p>
+      <p>Basic setup to start converting</p>
     </div>
 
     <div class="card highlight">
       <h3>Growth</h3>
       <p>₹2,499</p>
+      <p>Full system for consistent clients</p>
     </div>
 
     <div class="card">
       <h3>Premium</h3>
       <p>₹4,999</p>
+      <p>Complete setup + support</p>
     </div>
+
   </div>
 </div>
 
 <div class="section">
   <h2>Try DM Generator</h2>
+  <p>Create a quick outreach message instantly.</p>
+
   <input id="niche" placeholder="Your niche">
   <input id="offer" placeholder="Your offer">
   <br>
   <button class="btn" onclick="generateDM()">Generate</button>
+
   <div id="result" class="output"></div>
 </div>
 
 <a href="https://wa.me/91XXXXXXXXXX" class="sticky-btn">Chat Now</a>
 
 <script>
-// DARK MODE (FIXED + SAVES)
-function toggleMode() {
-  document.body.classList.toggle("light");
-  localStorage.setItem("mode", document.body.classList.contains("light") ? "light" : "dark");
-}
-
-window.onload = () => {
-  if (localStorage.getItem("mode") === "light") {
-    document.body.classList.add("light");
-  }
-
-  // Animation trigger
-  const sections = document.querySelectorAll(".section");
-  const reveal = () => {
-    sections.forEach(sec => {
-      if (sec.getBoundingClientRect().top < window.innerHeight - 100) {
-        sec.classList.add("show");
-      }
-    });
-  };
-  window.addEventListener("scroll", reveal);
-  reveal();
-};
-
-// DM Generator
 function generateDM() {
   let niche = document.getElementById("niche").value;
   let offer = document.getElementById("offer").value;
 
-  let message = `Hey! I saw your page — love your ${offer}. I help ${niche}s turn their social into clients using simple DM systems. Want a quick idea?`;
+  let message = `Hey! I came across your page — really like your ${offer}. I help ${niche}s turn their social media into a system that consistently brings clients using simple DM strategies. Want me to share a quick idea?`;
 
   document.getElementById("result").innerText = message;
 }
