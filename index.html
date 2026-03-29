@@ -21,62 +21,74 @@
       background: var(--bg);
       color: var(--text);
     }
-<!-- PLAIN BLUE FLOWING BANNER -->
-<div class="top-banner">
-  <p>🚀 Turn Your Attention Into Paying Clients • DM Systems That Convert • Start Scaling Today!</p>
-</div>
 
-<style>
-.top-banner {
-  width: 100%;
-  background: #1e40af; /* plain blue-ish */
-  color: #ffffff;
-  overflow: hidden;
-  white-space: nowrap;
-  padding: 12px 0;
-  font-weight: bold;
-  position: sticky;
-  top: 0;
-  z-index: 9999;
-  text-align: center;
-}
+    /* PLAIN BLUE FLOWING BANNER */
+    .top-banner {
+      width: 100%;
+      background: #1e40af; /* plain blue */
+      color: #ffffff;
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 12px 0;
+      font-weight: bold;
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      text-align: center;
+    }
 
-.top-banner p {
-  display: inline-block;
-  padding-left: 100%;
-  animation: marquee 15s linear infinite;
-  font-size: 16px;
-}
+    .top-banner p {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 15s linear infinite;
+      font-size: 16px;
+    }
 
-@keyframes marquee {
-  0%   { transform: translateX(0%); }
-  100% { transform: translateX(-100%); }
-}
+    @keyframes marquee {
+      0%   { transform: translateX(0%); }
+      100% { transform: translateX(-100%); }
+    }
 
-/* Smaller screens adjustment */
-@media (max-width: 768px) {
-  .top-banner p {
-    font-size: 14px;
-    animation-duration: 20s;
-  }
-}
-</style>
+    @media (max-width: 768px) {
+      .top-banner p {
+        font-size: 14px;
+        animation-duration: 20s;
+      }
+    }
+
+    /* NAVBAR */
     nav {
       display: flex;
       justify-content: space-between;
-      padding: 20px;
+      align-items: center;
+      padding: 20px 40px;
       position: sticky;
       top: 0;
       backdrop-filter: blur(10px);
-      background: rgba(11,15,26,0.6);
+      background: rgba(11,15,26,0.8);
+      z-index: 10000;
     }
 
     nav h2 {
       background: linear-gradient(90deg, var(--accent), var(--accent2));
       -webkit-background-clip: text;
       color: transparent;
+      font-size: 24px;
     }
 
+    .nav-links a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #ffffffcc;
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    /* HERO */
     .hero {
       text-align: center;
       padding: 120px 20px;
@@ -223,11 +235,27 @@
 
 <body>
 
+<!-- TOP BANNER -->
+<div class="top-banner">
+  <p>🚀 Turn Your Attention Into Paying Clients • DM Systems That Convert • Start Scaling Today!</p>
+</div>
+
+<!-- NAVBAR -->
 <nav>
   <h2>ReplyScale</h2>
+  <div class="nav-links">
+    <a href="#hero">Home</a>
+    <a href="#how-we-boost">Boost</a>
+    <a href="#why-convert">Stats</a>
+    <a href="#system">System</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#resources">Resources</a>
+    <a href="#faqs">FAQs</a>
+  </div>
 </nav>
 
-<div class="hero">
+<!-- HERO SECTION -->
+<div class="hero" id="hero">
   <h1>Turn Attention Into Clients</h1>
   <p>
     Most creators get views. Some get likes. Very few get clients.
@@ -238,534 +266,127 @@
   <a href="https://calendly.com/YOUR-LINK" class="btn">Book Free Call</a>
 </div>
 
-<div class="section">
-  <h2>How We Boost Your Business</h2>
-  <p style="max-width: 700px; margin: 0 auto 40px auto; color:#9ca3af;">
-    At ReplyScale, we help creators and businesses transform casual attention into consistent revenue.
-    Here’s a high-level view of how we make it happen:
-  </p>
-
-  <div class="cards flow-cards">
-
-    <div class="card resource-card">
-      <div class="icon">🎯</div>
-      <h3>1. Attract</h3>
-      <p>Create content that draws the right audience — not just views, but potential clients already interested in your offer.</p>
+<!-- HOW WE BOOST SECTION -->
+<div class="section" id="how-we-boost">
+  <h2>How We Boost Your Revenue</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>DM Automation</h3>
+      <p class="hidden">Automatically engage and convert leads in your DMs without losing authenticity.</p>
     </div>
-
-    <div class="card resource-card">
-      <div class="icon">💬</div>
-      <h3>2. Engage</h3>
-      <p>Start personalized conversations that spark interest and build trust with your audience.</p>
+    <div class="card">
+      <h3>Content Strategy</h3>
+      <p class="hidden">Tailored content flows that guide followers to take action and become paying clients.</p>
     </div>
-
-    <div class="card resource-card">
-      <div class="icon">💰</div>
-      <h3>3. Convert</h3>
-      <p>Structured DM flows turn interest into paying clients, maximizing conversion without being pushy.</p>
+    <div class="card">
+      <h3>Data Insights</h3>
+      <p class="hidden">Track what converts best and optimize your messaging for maximum results.</p>
     </div>
-
-    <div class="card resource-card">
-      <div class="icon">📈</div>
-      <h3>4. Scale</h3>
-      <p>Once the system works, scale consistently for more clients, more revenue, and predictable growth.</p>
-    </div>
-
   </div>
 </div>
 
-<style>
-.flow-cards {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  flex-wrap: nowrap;
-  position: relative;
-}
-
-.resource-card {
-  background: linear-gradient(145deg, #22d3ee, #7c3aed);
-  color: #fff;
-  padding: 30px;
-  border-radius: 16px;
-  text-align: center;
-  min-width: 240px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-  position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.resource-card:hover {
-  transform: translateY(-6px) scale(1.05);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.35);
-}
-
-.resource-card .icon {
-  font-size: 50px;
-  margin-bottom: 15px;
-}
-
-/* Draw arrows between cards */
-.flow-cards .card:not(:last-child)::after {
-  content: '➔';
-  position: absolute;
-  top: 50%;
-  right: -25px;
-  font-size: 32px;
-  color: #fff;
-  transform: translateY(-50%);
-}
-
-/* Responsive: stack vertically and hide arrows */
-@media (max-width: 768px) {
-  .flow-cards {
-    flex-direction: column;
-    align-items: center;
-  }
-  .flow-cards .card {
-    min-width: 90%;
-  }
-  .flow-cards .card:not(:last-child)::after {
-    display: none;
-  }
-}
-</style>
-
-<style>
-/* Hover effect for Boost section cards */
-.cards .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.3);
-  transition: 0.3s;
-}
-
-/* Responsive: Stack cards vertically on small screens */
-@media (max-width: 768px) {
-  .cards .card {
-    min-width: 90%;
-  }
-}
-</style>
-
-
-<!-- WHY MOST BUSINESSES DON’T CONVERT -->
-<div class="section">
-  <h2>Why Most Businesses Don’t Convert</h2>
-  <p style="max-width:700px; margin: 0 auto 40px auto; color:#9ca3af;">
-    Most businesses can attract attention, but turning it into paying clients is where the majority fail. Here’s what the data says:
-  </p>
-
-  <div class="cards" style="display:flex; justify-content:center; gap:25px; flex-wrap: wrap;">
-    
-    <div class="card stat-card" style="background: linear-gradient(145deg,#7c3aed,#22d3ee); color:#fff; padding:30px; border-radius:16px; min-width:220px; text-align:center; box-shadow:0 6px 20px rgba(0,0,0,0.2);">
-      <h3 style="font-size:48px; margin-bottom:10px;">92%</h3>
-      <p style="font-size:16px;">of social media leads never convert without follow-up (HubSpot, 2022)</p>
-    </div>
-
-    <div class="card stat-card" style="background: linear-gradient(145deg,#22d3ee,#7c3aed); color:#fff; padding:30px; border-radius:16px; min-width:220px; text-align:center; box-shadow:0 6px 20px rgba(0,0,0,0.2);">
-      <h3 style="font-size:48px; margin-bottom:10px;">80%</h3>
-      <p style="font-size:16px;">of leads drop due to inconsistent or delayed follow-up (Salesforce, 2021)</p>
-    </div>
-
-    <div class="card stat-card" style="background: linear-gradient(145deg,#facc15,#7c3aed); color:#fff; padding:30px; border-radius:16px; min-width:220px; text-align:center; box-shadow:0 6px 20px rgba(0,0,0,0.2);">
-      <h3 style="font-size:48px; margin-bottom:10px;">67%</h3>
-      <p style="font-size:16px;">of leads are lost due to poor lead nurturing (Marketo, 2022)</p>
-    </div>
-
-    <div class="card stat-card" style="background: linear-gradient(145deg,#f87171,#7c3aed); color:#fff; padding:30px; border-radius:16px; min-width:220px; text-align:center; box-shadow:0 6px 20px rgba(0,0,0,0.2);">
-      <h3 style="font-size:48px; margin-bottom:10px;">50%</h3>
-      <p style="font-size:16px;">of small business websites fail to convert visitors due to unclear CTAs (Small Business Trends, 2023)</p>
-    </div>
-
+<!-- WHY BUSINESSES DON'T CONVERT -->
+<div class="section" id="why-convert">
+  <h2>Why Most Businesses Don't Convert</h2>
+  <div class="flow">
+    <div>Content gets views but no actionable follow-up.</div>
+    <div>DMs are manually handled → leads drop off.</div>
+    <div>Lack of tracking → can't optimize or repeat success.</div>
   </div>
 </div>
 
-<!-- THE REPLYSCALE SYSTEM WITH ANIMATED ARROWS -->
-<div class="section">
+<!-- REPLYSCALE SYSTEM -->
+<div class="section" id="system">
   <h2>The ReplyScale System</h2>
-  <p style="max-width:700px; margin: 0 auto 40px auto; color:#9ca3af;">
-    Our proven 5-step system converts attention into paying clients. Each step builds upon the previous, creating a predictable and repeatable revenue flow:
-  </p>
-
-  <div class="flow flow-cards" style="display:flex; justify-content:center; gap:25px; flex-wrap: nowrap; position: relative;">
-
-    <div class="card system-card">
-      <div class="icon">🎯</div>
-      <h3>1. Attract</h3>
-      <p>Targeted content brings in the right audience, increasing the likelihood of engagement and conversions (Content Marketing Institute, 2023).</p>
+  <p>Everything works together to convert attention into paying clients consistently.</p>
+  <div class="cards">
+    <div class="card highlight">
+      <h3>System 1</h3>
+      <p class="hidden">Automates repetitive tasks to save you time and grow revenue.</p>
     </div>
-
-    <div class="card system-card">
-      <div class="icon">💬</div>
-      <h3>2. Engage</h3>
-      <p>Personalized messaging sparks curiosity, builds trust, and keeps leads interested (Salesforce, 2022).</p>
+    <div class="card highlight">
+      <h3>System 2</h3>
+      <p class="hidden">Optimized DM sequences that actually convert leads into clients.</p>
     </div>
-
-    <div class="card system-card">
-      <div class="icon">💰</div>
-      <h3>3. Convert</h3>
-      <p>Structured DM flows and timely follow-ups convert interest into paying clients (HubSpot, 2023).</p>
-    </div>
-
-    <div class="card system-card">
-      <div class="icon">🛠️</div>
-      <h3>4. Build a System</h3>
-      <p>Connect all steps into a smooth lead flow to reduce friction and guesswork (Marketo, 2022).</p>
-    </div>
-
-    <div class="card system-card">
-      <div class="icon">📈</div>
-      <h3>5. Scale</h3>
-      <p>Once optimized, scale consistently for predictable growth and sustainable revenue (Forbes, 2023).</p>
-    </div>
-
   </div>
 </div>
 
-<style>
-/* Card hover effects */
-.stat-card, .system-card {
-  background: linear-gradient(145deg,#7c3aed,#22d3ee);
-  color:#fff;
-  padding:25px;
-  border-radius:16px;
-  min-width:220px;
-  text-align:center;
-  box-shadow:0 6px 20px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.stat-card:hover, .system-card:hover {
-  transform: translateY(-6px) scale(1.05);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.35);
-}
-
-/* Flow arrows */
-.flow-cards .card:not(:last-child)::after {
-  content: '➔';
-  position: absolute;
-  top: 50%;
-  right: -20px;
-  font-size: 28px;
-  color: #fff;
-  transform: translateY(-50%);
-  animation: arrow-pulse 1.5s infinite;
-}
-
-/* Arrow animation */
-@keyframes arrow-pulse {
-  0% { transform: translateY(-50%) translateX(0); opacity: 0.4; }
-  50% { transform: translateY(-50%) translateX(6px); opacity: 1; }
-  100% { transform: translateY(-50%) translateX(0); opacity: 0.4; }
-}
-
-/* Responsive: stack cards vertically on smaller screens */
-@media (max-width: 768px) {
-  .cards, .flow-cards {
-    flex-direction: column;
-    align-items: center;
-  }
-  .stat-card, .system-card {
-    min-width: 90%;
-  }
-  .flow-cards .card:not(:last-child)::after {
-    display: none;
-  }
-}
-</style>
-<div class="section">
-  <h2>Pricing</h2>
-
+<!-- PRICING -->
+<div class="section" id="pricing">
+  <h2>Pricing Plans</h2>
   <div class="cards">
-
-    <div class="card" onclick="openCard(this)">
+    <div class="card">
       <h3>Starter</h3>
-      <p>₹999</p>
-      <div class="hidden">
-        <p>✔ Profile optimization</p>
-        <p>✔ Basic DM scripts</p>
-        <p>✔ Conversion flow</p>
-      </div>
+      <p class="hidden">$49/month - Basic automation + analytics.</p>
     </div>
-
-    <div class="card highlight" onclick="openCard(this)">
-      <span class="badge">Most Popular</span>
-      <h3>Growth</h3>
-      <p>₹2,499</p>
-      <div class="hidden">
-        <p>✔ Full DM system</p>
-        <p>✔ Content ideas</p>
-        <p>✔ Lead flow setup</p>
-        <p>✔ Weekly support</p>
-      </div>
+    <div class="card">
+      <h3>Pro</h3>
+      <p class="hidden">$99/month - Full automation + advanced insights.</p>
     </div>
-
-    <div class="card" onclick="openCard(this)">
-      <h3>Premium</h3>
-      <p>₹4,999</p>
-      <div class="hidden">
-        <p>✔ Full setup</p>
-        <p>✔ Advanced follow-ups</p>
-        <p>✔ Optimization</p>
-        <p>✔ Priority support</p>
-      </div>
-    </div>
-
   </div>
 </div>
 
-<div class="section">
- <div class="section">
- <div class="section">
-  <div class="section">
+<!-- FREE RESOURCES -->
+<div class="section" id="resources">
   <h2>Free Resources</h2>
-  <p>Build trust and start converting even before you invest:</p>
-
-  <div class="cards free-resources-cards">
-    
-    <!-- DM Scripts Card -->
-    <div class="card resource-card">
-      <h3>DM Scripts</h3>
-      <p>Ready-to-use messages that get replies from potential clients:</p>
-      <ul>
-        <li>💬 <strong>Script 1:</strong> “Hey [Name]! I saw your page—love your content. I help [niche] turn social into clients. Want a quick idea?” 
-          <button class="btn" onclick="copyText(this, 'Hey [Name]! I saw your page—love your content. I help [niche] turn social into clients. Want a quick idea?')">Copy</button>
-        </li>
-        <li>💬 <strong>Script 2:</strong> “Hi [Name], I noticed you’re interested in [topic]. I help people like you get [result] using simple DM systems.” 
-          <button class="btn" onclick="copyText(this, 'Hi [Name], I noticed you’re interested in [topic]. I help people like you get [result] using simple DM systems.')">Copy</button>
-        </li>
-        <li>💬 <strong>Script 3:</strong> “Hello [Name]! Quick question: Would you like a free tip to convert your audience into paying clients?” 
-          <button class="btn" onclick="copyText(this, 'Hello [Name]! Quick question: Would you like a free tip to convert your audience into paying clients?')">Copy</button>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Social Media Guides Card -->
-    <div class="card resource-card">
-      <h3>Social Media Guides</h3>
-      <p>Step-by-step content ideas to attract the right audience:</p>
-      <ul>
-        <li>📌 <strong>Guide 1:</strong> “3 Post Types to Turn Viewers into Leads” <button class="btn" onclick="copyText(this, '3 Post Types to Turn Viewers into Leads')">Copy</button></li>
-        <li>📌 <strong>Guide 2:</strong> “Weekly Content Planner for Consistent Engagement” <button class="btn" onclick="copyText(this, 'Weekly Content Planner for Consistent Engagement')">Copy</button></li>
-        <li>📌 <strong>Guide 3:</strong> “Caption Templates That Drive DMs” <button class="btn" onclick="copyText(this, 'Caption Templates That Drive DMs')">Copy</button></li>
-      </ul>
-    </div>
-
-    <!-- Mini Email Course Card -->
-    <div class="card resource-card">
-      <h3>Mini Email Course</h3>
-      <p>“3 Days to DM Conversions” – Learn how to turn engagement into paying clients:</p>
-      <ul>
-        <li>📧 <strong>Day 1:</strong> Crafting DM messages that get replies <button class="btn" onclick="copyText(this, 'Crafting DM messages that get replies')">Copy</button></li>
-        <li>📧 <strong>Day 2:</strong> Structuring your lead flow for conversions <button class="btn" onclick="copyText(this, 'Structuring your lead flow for conversions')">Copy</button></li>
-        <li>📧 <strong>Day 3:</strong> Following up without being pushy <button class="btn" onclick="copyText(this, 'Following up without being pushy')">Copy</button></li>
-      </ul>
-    </div>
-
-  </div>
-</div>
-
-<style>
-/* Free Resources card styles */
-.free-resources-cards {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  padding-bottom: 10px;
-}
-
-.resource-card {
-  flex: 0 0 320px;
-  padding: 20px;
-  border-radius: 12px;
-  color: #fff;
-  background: linear-gradient(145deg, #7c3aed, #22d3ee);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.resource-card:nth-child(2) { background: linear-gradient(145deg, #22d3ee, #7c3aed); }
-.resource-card:nth-child(3) { background: linear-gradient(145deg, #facc15, #7c3aed); }
-
-.resource-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-}
-
-.resource-card ul {
-  list-style: none;
-  padding: 0;
-}
-
-.resource-card li {
-  margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.resource-card .btn {
-  padding: 6px 12px;
-  font-size: 14px;
-  border-radius: 6px;
-  transition: 0.2s;
-  cursor: pointer;
-}
-
-.resource-card .btn:hover {
-  transform: scale(1.05);
-  background: #ffffff33;
-}
-
-/* Responsive: Stack cards on small screens */
-@media (max-width: 768px) {
-  .free-resources-cards {
-    flex-direction: column;
-    overflow-x: visible;
-  }
-}
-</style>
-
-<script>
-  // Copy button functionality
-  function copyText(button, text) {
-    navigator.clipboard.writeText(text).then(() => {
-      button.innerText = "Copied!";
-      button.style.background = "#ffffff33";
-      setTimeout(() => {
-        button.innerText = "Copy";
-        button.style.background = "";
-      }, 1500);
-    });
-  }
-</script>
-
-<script>
-  // Copy button functionality
-  function copyText(button, text) {
-    navigator.clipboard.writeText(text).then(() => {
-      button.innerText = "Copied!";
-      button.style.background = "#ffffff33";
-      setTimeout(() => {
-        button.innerText = "Copy";
-        button.style.background = "";
-      }, 1500);
-    });
-  }
-
-  // Hover effect for cards
-  const cards = document.querySelectorAll('.cards .card');
-  cards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-      card.style.transform = 'scale(1.05)';
-      card.style.boxShadow = '0 10px 25px rgba(0,0,0,0.3)';
-    });
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = '';
-      card.style.boxShadow = '';
-    });
-  });
-</script>
-
-<script>
-  function copyText(button, text) {
-    navigator.clipboard.writeText(text).then(() => {
-      button.innerText = "Copied!";
-      setTimeout(() => button.innerText = "Copy", 1500);
-    });
-  }
-</script>
-
-<script>
-  // Make Free Resources cards expandable
-  const resourceCards = document.querySelectorAll(".section .cards .card");
-  resourceCards.forEach(card => {
-    card.addEventListener("click", () => {
-      resourceCards.forEach(c => { if(c !== card) c.classList.remove("active"); });
-      card.classList.toggle("active");
-    });
-  });
-</script>
-<div class="section">
-
-  <div class="section">
-  <h2>FAQs & Objections</h2>
-  <p>Common concerns answered to make your decision easier:</p>
-
   <div class="cards">
-
-    <div class="card" onclick="toggleFAQ(this)">
-      <h3>Do I need prior marketing experience?</h3>
-      <div class="hidden">
-        <p>No! ReplyScale is designed for beginners and pros alike. Our systems guide you step by step.</p>
-      </div>
+    <div class="card">
+      <h3>DM Templates</h3>
+      <p class="hidden">Ready-to-use templates for high-converting DMs.</p>
     </div>
-
-    <div class="card" onclick="toggleFAQ(this)">
-      <h3>How long before I see results?</h3>
-      <div class="hidden">
-        <p>Most users see replies and early leads within a week, but full conversion depends on your niche and engagement.</p>
-      </div>
+    <div class="card">
+      <h3>Content Ideas</h3>
+      <p class="hidden">Content prompts that drive engagement and sales.</p>
     </div>
-
-    <div class="card" onclick="toggleFAQ(this)">
-      <h3>Will this work for my business?</h3>
-      <div class="hidden">
-        <p>ReplyScale works for most service-based and creator businesses. If unsure, book a free call for personalized guidance.</p>
-      </div>
-    </div>
-
   </div>
 </div>
 
-<script>
-  function toggleFAQ(selected) {
-    let faqs = document.querySelectorAll(".card");
-    faqs.forEach(faq => {
-      if (faq !== selected) faq.classList.remove("active");
-    });
-    selected.classList.toggle("active");
-  }
-</script>
-  <h2>Try DM Generator</h2>
-
-  <input id="niche" placeholder="Your niche">
-  <input id="offer" placeholder="Your offer">
-
-  <br>
-  <button class="btn" onclick="generateDM()">Generate</button>
-
-  <div id="result" class="output"></div>
+<!-- FAQs -->
+<div class="section" id="faqs">
+  <h2>FAQs & Objections</h2>
+  <div class="flow">
+    <div>Q: Will this work for any niche?<br>A: Yes, systems are tailored per niche.</div>
+    <div>Q: Do I need prior experience?<br>A: No, everything is plug-and-play.</div>
+    <div>Q: Can I cancel anytime?<br>A: Yes, monthly plans are flexible.</div>
+  </div>
 </div>
 
-<a href="https://www.linkedin.com/company/replyscale" class="sticky-btn">→ Follow ReplyScale</a>
+<!-- DM Generator -->
+<div class="section" id="dm-generator">
+  <h2>Free DM Generator</h2>
+  <input id="dm-input" placeholder="Enter your niche">
+  <button class="btn" onclick="generateDM()">Generate DM</button>
+  <div class="output" id="dm-output"></div>
+</div>
 
 <script>
-function generateDM() {
-  let niche = document.getElementById("niche").value;
-  let offer = document.getElementById("offer").value;
-
-  let message = `Hey! I saw your page — love your ${offer}. I help ${niche}s turn their social into clients using simple DM systems. Want a quick idea?`;
-
-  document.getElementById("result").innerText = message;
-}
-
-function openCard(selected) {
-  let cards = document.querySelectorAll(".card");
-  cards.forEach(card => {
-    if (card !== selected) card.classList.remove("active");
+  // CARD TOGGLE
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', () => card.classList.toggle('active'));
   });
-  selected.classList.toggle("active");
-}
 
-const sections = document.querySelectorAll(".section");
-window.addEventListener("scroll", () => {
-  sections.forEach(sec => {
-    if (sec.getBoundingClientRect().top < window.innerHeight - 100) {
-      sec.classList.add("show");
+  // SCROLL ANIMATION
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('show');
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('.section').forEach(section => observer.observe(section));
+
+  // DM GENERATOR
+  function generateDM() {
+    const input = document.getElementById('dm-input').value;
+    const output = document.getElementById('dm-output');
+    if(input) {
+      output.textContent = `Hey there! I noticed your work in ${input}. I'd love to chat about how we can boost your results.`;
+    } else {
+      output.textContent = "Please enter your niche.";
     }
-  });
-});
+  }
 </script>
+
+<a href="#hero" class="sticky-btn">Back to Top</a>
 
 </body>
 </html>
