@@ -13,15 +13,13 @@
       --accent2: #22d3ee;
     }
 
+    html {scroll-behavior: smooth;}
+
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background: var(--bg);
       color: var(--text);
-    }
-
-    html {
-      scroll-behavior: smooth;
     }
 
     nav {
@@ -30,8 +28,8 @@
       padding: 20px;
       position: sticky;
       top: 0;
-      background: rgba(11,15,26,0.7);
       backdrop-filter: blur(10px);
+      background: rgba(11,15,26,0.6);
     }
 
     nav h2 {
@@ -47,7 +45,6 @@
 
     .hero h1 {
       font-size: 56px;
-      line-height: 1.1;
       background: linear-gradient(90deg, #7c3aed, #22d3ee);
       -webkit-background-clip: text;
       color: transparent;
@@ -79,17 +76,14 @@
     .section {
       padding: 90px 20px;
       text-align: center;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
     }
 
-    .section h2 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-
-    .section p {
-      color: #9ca3af;
-      max-width: 600px;
-      margin: 0 auto 40px;
+    .show {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .cards {
@@ -99,23 +93,49 @@
     }
 
     .card {
-      background: var(--card);
+      background: linear-gradient(145deg, #111827, #0f172a);
       padding: 30px;
       margin: 12px;
       border-radius: 16px;
       width: 260px;
-      transition: 0.3s;
       border: 1px solid #1f2937;
+      transition: 0.3s;
+      position: relative;
+      cursor: pointer;
     }
 
     .card:hover {
-      transform: translateY(-10px);
-      border-color: var(--accent);
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 0 20px rgba(124,58,237,0.4);
     }
 
     .highlight {
-      border: 2px solid var(--accent);
-      transform: scale(1.05);
+      border: 2px solid transparent;
+      background: linear-gradient(#0f172a, #0f172a) padding-box,
+                  linear-gradient(90deg, #7c3aed, #22d3ee) border-box;
+    }
+
+    .badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: linear-gradient(90deg, #7c3aed, #22d3ee);
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+    }
+
+    .hidden {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: all 0.4s ease;
+    }
+
+    .card.active .hidden {
+      max-height: 300px;
+      opacity: 1;
+      margin-top: 15px;
     }
 
     .flow {
@@ -152,14 +172,13 @@
       bottom: 20px;
       right: 20px;
       background: linear-gradient(90deg, var(--accent), var(--accent2));
-      color: white;
       padding: 14px 20px;
       border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
+      color: white;
       box-shadow: 0 0 20px rgba(124,58,237,0.5);
     }
-
   </style>
 </head>
 
@@ -172,8 +191,8 @@
 <div class="hero">
   <h1>Turn Attention Into Clients</h1>
   <p>
-    Most creators and small businesses get views, likes, and comments — but no real clients.
-    ReplyScale builds simple systems that turn your content and DMs into consistent leads, conversations, and sales.
+    Most creators get views. Some get likes. Very few get clients.
+    ReplyScale builds systems that turn your content and DMs into consistent revenue.
   </p>
 
   <a href="https://instagram.com/YOURUSERNAME" class="btn">Get Started</a>
@@ -181,43 +200,12 @@
 </div>
 
 <div class="section">
-  <h2>The Problem</h2>
-  <p>
-    You’re posting. People are watching. Some even reply.
-    But nothing turns into actual business.
-  </p>
-
-  <div class="cards">
-    <div class="card">Low replies on posts</div>
-    <div class="card">No clear DM strategy</div>
-    <div class="card">Leads that don’t convert</div>
-  </div>
-</div>
-
-<div class="section">
   <h2>The System</h2>
-  <p>
-    We don’t just help you post more. We build a simple system that connects your content to actual revenue.
-  </p>
-
   <div class="flow">
-    <div>1. Content that attracts the right audience</div>
-    <div>2. Clear messaging that starts conversations</div>
-    <div>3. DM system that converts interest into clients</div>
-    <div>4. Simple lead flow that turns conversations into sales</div>
-  </div>
-</div>
-
-<div class="section">
-  <h2>What You Get</h2>
-  <p>
-    Everything you need to turn your social media into a working client acquisition system.
-  </p>
-
-  <div class="cards">
-    <div class="card">Content Strategy</div>
-    <div class="card">DM Scripts & Flows</div>
-    <div class="card">Lead Conversion Setup</div>
+    <div>1. Content that attracts the right people</div>
+    <div>2. Messaging that starts conversations</div>
+    <div>3. DM systems that convert interest into clients</div>
+    <div>4. Simple flows that turn conversations into sales</div>
   </div>
 </div>
 
@@ -226,22 +214,37 @@
 
   <div class="cards">
 
-    <div class="card">
+    <div class="card" onclick="openCard(this)">
       <h3>Starter</h3>
       <p>₹999</p>
-      <p>Basic setup to start converting</p>
+      <div class="hidden">
+        <p>✔ Profile optimization</p>
+        <p>✔ Basic DM scripts</p>
+        <p>✔ Simple conversion flow</p>
+      </div>
     </div>
 
-    <div class="card highlight">
+    <div class="card highlight" onclick="openCard(this)">
+      <span class="badge">Most Popular</span>
       <h3>Growth</h3>
       <p>₹2,499</p>
-      <p>Full system for consistent clients</p>
+      <div class="hidden">
+        <p>✔ Full DM system</p>
+        <p>✔ Content ideas</p>
+        <p>✔ Lead flow setup</p>
+        <p>✔ Weekly support</p>
+      </div>
     </div>
 
-    <div class="card">
+    <div class="card" onclick="openCard(this)">
       <h3>Premium</h3>
       <p>₹4,999</p>
-      <p>Complete setup + support</p>
+      <div class="hidden">
+        <p>✔ Full setup</p>
+        <p>✔ Advanced follow-ups</p>
+        <p>✔ Optimization</p>
+        <p>✔ Priority support</p>
+      </div>
     </div>
 
   </div>
@@ -249,10 +252,10 @@
 
 <div class="section">
   <h2>Try DM Generator</h2>
-  <p>Create a quick outreach message instantly.</p>
 
   <input id="niche" placeholder="Your niche">
   <input id="offer" placeholder="Your offer">
+
   <br>
   <button class="btn" onclick="generateDM()">Generate</button>
 
@@ -266,10 +269,32 @@ function generateDM() {
   let niche = document.getElementById("niche").value;
   let offer = document.getElementById("offer").value;
 
-  let message = `Hey! I came across your page — really like your ${offer}. I help ${niche}s turn their social media into a system that consistently brings clients using simple DM strategies. Want me to share a quick idea?`;
+  let message = `Hey! I saw your page — love your ${offer}. I help ${niche}s turn their social into clients using simple DM systems. Want a quick idea?`;
 
   document.getElementById("result").innerText = message;
 }
+
+function openCard(selected) {
+  let cards = document.querySelectorAll(".card");
+
+  cards.forEach(card => {
+    if (card !== selected) {
+      card.classList.remove("active");
+    }
+  });
+
+  selected.classList.toggle("active");
+}
+
+// scroll animation
+const sections = document.querySelectorAll(".section");
+window.addEventListener("scroll", () => {
+  sections.forEach(sec => {
+    if (sec.getBoundingClientRect().top < window.innerHeight - 100) {
+      sec.classList.add("show");
+    }
+  });
+});
 </script>
 
 </body>
