@@ -199,38 +199,98 @@
   <a href="https://calendly.com/YOUR-LINK" class="btn">Book Free Call</a>
 </div>
 
-  <div class="section">
+<div class="section">
   <h2>How We Boost Your Business</h2>
-  <p>See at a glance how ReplyScale turns attention into paying clients:</p>
+  <p style="max-width: 700px; margin: 0 auto 40px auto; color:#9ca3af;">
+    At ReplyScale, we help creators and businesses transform casual attention into consistent revenue.
+    Here’s a high-level view of how we make it happen:
+  </p>
 
-  <div class="cards" style="flex-wrap: wrap; justify-content: center; gap: 20px;">
+  <div class="cards flow-cards">
 
-    <div class="card" style="min-width: 220px; background: linear-gradient(145deg, #22d3ee, #7c3aed); color: #fff; padding: 25px; text-align: center;">
-      <div style="font-size: 40px; margin-bottom: 15px;">🎯</div>
+    <div class="card resource-card">
+      <div class="icon">🎯</div>
       <h3>1. Attract</h3>
-      <p>Create content that draws the right audience to your page.</p>
+      <p>Create content that draws the right audience — not just views, but potential clients already interested in your offer.</p>
     </div>
 
-    <div class="card" style="min-width: 220px; background: linear-gradient(145deg, #facc15, #7c3aed); color: #fff; padding: 25px; text-align: center;">
-      <div style="font-size: 40px; margin-bottom: 15px;">💬</div>
+    <div class="card resource-card">
+      <div class="icon">💬</div>
       <h3>2. Engage</h3>
-      <p>Start meaningful conversations that spark interest.</p>
+      <p>Start personalized conversations that spark interest and build trust with your audience.</p>
     </div>
 
-    <div class="card" style="min-width: 220px; background: linear-gradient(145deg, #7c3aed, #22d3ee); color: #fff; padding: 25px; text-align: center;">
-      <div style="font-size: 40px; margin-bottom: 15px;">💰</div>
+    <div class="card resource-card">
+      <div class="icon">💰</div>
       <h3>3. Convert</h3>
-      <p>Use smart DM flows to turn conversations into clients.</p>
+      <p>Structured DM flows turn interest into paying clients, maximizing conversion without being pushy.</p>
     </div>
 
-    <div class="card" style="min-width: 220px; background: linear-gradient(145deg, #22d3ee, #facc15); color: #fff; padding: 25px; text-align: center;">
-      <div style="font-size: 40px; margin-bottom: 15px;">📈</div>
+    <div class="card resource-card">
+      <div class="icon">📈</div>
       <h3>4. Scale</h3>
-      <p>Build a repeatable system to consistently grow revenue.</p>
+      <p>Once the system works, scale consistently for more clients, more revenue, and predictable growth.</p>
     </div>
 
   </div>
 </div>
+
+<style>
+.flow-cards {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: nowrap;
+  position: relative;
+}
+
+.resource-card {
+  background: linear-gradient(145deg, #22d3ee, #7c3aed);
+  color: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+  min-width: 240px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+}
+
+.resource-card .icon {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+/* Draw arrows between cards */
+.flow-cards .card:not(:last-child)::after {
+  content: '➔';
+  position: absolute;
+  top: 50%;
+  right: -25px;
+  font-size: 32px;
+  color: #fff;
+  transform: translateY(-50%);
+}
+
+/* Responsive: stack vertically and hide arrows */
+@media (max-width: 768px) {
+  .flow-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .flow-cards .card {
+    min-width: 90%;
+  }
+  .flow-cards .card:not(:last-child)::after {
+    display: none;
+  }
+}
+</style>
 
 <style>
 /* Hover effect for Boost section cards */
