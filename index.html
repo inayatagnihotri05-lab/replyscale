@@ -273,25 +273,62 @@
 
   </div>
 </div>
+
 <div class="section">
   <h2>Free Resources</h2>
   <p>Build trust and start converting even before you invest:</p>
 
   <div class="cards">
+
     <div class="card">
       <h3>DM Scripts</h3>
-      <p>Ready-to-use messaging scripts that get replies from potential clients.</p>
+      <p>Ready-to-use messages that get replies from potential clients:</p>
+      <div class="hidden">
+        <ul>
+          <li><strong>Script 1:</strong> “Hey [Name]! I saw your page—love your content. I help [niche] turn social into clients. Want a quick idea?” <em>(Tip: Personalize [Name] and [niche] for higher response.)</em></li>
+          <li><strong>Script 2:</strong> “Hi [Name], I noticed you’re interested in [topic]. I help people like you get [result] using simple DM systems.” <em>(Tip: Mention a specific result to show value.)</em></li>
+          <li><strong>Script 3:</strong> “Hello [Name]! Quick question: Would you like a free tip to convert your audience into paying clients?” <em>(Tip: Keep it short and curiosity-driven.)</em></li>
+        </ul>
+      </div>
     </div>
+
     <div class="card">
       <h3>Social Media Content Guides</h3>
-      <p>Step-by-step content ideas to attract the right audience and generate leads.</p>
+      <p>Step-by-step content ideas to attract the right audience:</p>
+      <div class="hidden">
+        <ul>
+          <li><strong>Guide 1:</strong> “3 Post Types to Turn Viewers into Leads” <em>(Tip: Mix educational, entertaining, and promotional content.)</em></li>
+          <li><strong>Guide 2:</strong> “Weekly Content Planner for Consistent Engagement” <em>(Tip: Schedule posts at peak audience times.)</em></li>
+          <li><strong>Guide 3:</strong> “Caption Templates That Drive DMs” <em>(Tip: End captions with a question to encourage replies.)</em></li>
+        </ul>
+      </div>
     </div>
+
     <div class="card">
       <h3>Mini Email Course</h3>
-      <p>“3 Days to DM Conversions” – Learn how to turn engagement into paying clients.</p>
+      <p>“3 Days to DM Conversions” – Learn how to turn engagement into paying clients:</p>
+      <div class="hidden">
+        <ul>
+          <li><strong>Day 1:</strong> Crafting DM messages that get replies <em>(Tip: Use curiosity and relevance to engage.)</em></li>
+          <li><strong>Day 2:</strong> Structuring your lead flow for conversions <em>(Tip: Map every response to a next-step message.)</em></li>
+          <li><strong>Day 3:</strong> Following up without being pushy <em>(Tip: Give value in follow-ups to build trust.)</em></li>
+        </ul>
+      </div>
     </div>
+
   </div>
 </div>
+
+<script>
+  // Make Free Resources cards expandable
+  const resourceCards = document.querySelectorAll(".section .cards .card");
+  resourceCards.forEach(card => {
+    card.addEventListener("click", () => {
+      resourceCards.forEach(c => { if(c !== card) c.classList.remove("active"); });
+      card.classList.toggle("active");
+    });
+  });
+</script>
 <div class="section">
 
   <div class="section">
